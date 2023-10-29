@@ -79,6 +79,7 @@ static const char *subdirs[] = { "cur", "new" };
 static struct flock lck;
 static DBT key, value;
 
+#define _POSIX_PATH_MAX 163840
 static int
 convert( const char *box, int altmap )
 {

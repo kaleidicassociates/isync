@@ -515,7 +515,8 @@ imap_vprintf( const char *fmt, va_list ap )
 	const char *s;
 	char *d, *ed;
 	char c;
-#define MAX_SEGS 16
+// #define MAX_SEGS 16
+#define MAX_SEGS 160
 #define add_seg(s, l) \
 		do { \
 			if (nsegs == MAX_SEGS) \
@@ -528,7 +529,7 @@ imap_vprintf( const char *fmt, va_list ap )
 	uint totlen = 0;
 	const char *segs[MAX_SEGS];
 	uint segls[MAX_SEGS];
-	char buf[1000];
+	char buf[10000];
 
 	d = buf;
 	ed = d + sizeof(buf);
